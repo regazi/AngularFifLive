@@ -1,0 +1,4 @@
+<google-map *ngIf="(apiLoaded | async)"  width="100%" [zoom]="zoom" [center]="{lat: center.lat,lng:center.lng}" >
+<map-marker *ngFor="let marker of markers;" #Marker="mapMarker" [position]="{lat: marker.lat,lng:marker.lng}" (mapClick)="openInfoWindow(Marker, marker.label)" ></map-marker>
+<map-info-window>{{markerContent}}</map-info-window>
+</google-map>

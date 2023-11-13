@@ -1,0 +1,22 @@
+mat-card {
+    flex: 0 0 auto; /* Prevents cards from stretching */
+    width: 200px; /* Width of each card */
+    transition: transform 0.2s ease;
+}
+
+img {
+    width: 100%; /* Ensures image takes full width of the card */
+    height: 300px; 
+}
+.containerDiv{
+    right: 0;
+    max-height: 60vh;
+    overflow: scroll;
+    scrollbar-base-color: transparent;
+   
+}
+mat-card-header {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}

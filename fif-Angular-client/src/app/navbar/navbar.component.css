@@ -1,0 +1,9 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 100px rgba(3, 4, 253, 0.8);
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }

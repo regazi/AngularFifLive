@@ -1,0 +1,14 @@
+.homeContainer{
+    display:flex;
+    justify-content: center;
+}
+.homeWrapper{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cardBody{
+    margin-left: 15%;
+    padding: 0;
+}

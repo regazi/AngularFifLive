@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span>FiF</span>
+  <span class="spacer"></span>
+  <mat-button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></mat-button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click) ="openAccountDialog()">My Account</button>
+    <button mat-menu-item (click) ="openFavoritesDialog()">Favorites</button>
+    <button mat-menu-item (click) ="logout()">Log Out</button>
+  </mat-menu>
+</mat-toolbar>
+

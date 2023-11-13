@@ -1,0 +1,14 @@
+<app-navbar [favoriteMovies]="getFavorites()" [user]="user"></app-navbar>
+<section class="outerContainer">
+<div class={{style}}>
+    <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
+        <mat-card-header>
+        <mat-card-title>{{movie.title}}</mat-card-title>
+        </mat-card-header>
+        <img src={{movie.imageURL}} alt= {{movie.title}} (click)="openMovieViewDialog(movie)" />
+        <mat-card-actions (click)="toggleFavorite(movie._id)">
+           <mat-icon>{{ isFavorite(movie._id) ? 'favorite_solid' : 'favorite_border' }}</mat-icon>
+        </mat-card-actions>
+    </mat-card>
+</div>
+</section>

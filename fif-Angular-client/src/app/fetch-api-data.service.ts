@@ -22,13 +22,20 @@ export class FetchApiDataService {
     return res;
   }
   public userRegistration(userDetails: any): Observable<any> {
-    (userDetails);
-    return this.http.post(_googleApi, userDetails).pipe(
+    return this.http.post(`${_api}users`, userDetails).pipe(
+    catchError(this.handleError)
+    );
+  }
+  public updateUser(userDetails: any): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.put(`${_api}users/${userDetails._id}`, userDetails,{headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
     catchError(this.handleError)
     );
   }
   public userLogin(userDetails: any): Observable<any> {
-    (userDetails);
     return this.http.post(_api + 'login?', userDetails).pipe(
     catchError(this.handleError)
     );
@@ -108,6 +115,7 @@ export class FetchApiDataService {
     if (error.error instanceof ErrorEvent) {
     console.error('Some error occurred:', error.error.message);
     } else {
+      console.log(error);
     console.error(
         `Error Status code ${error.status}, ` +
         `Error body is: ${error.error}`);

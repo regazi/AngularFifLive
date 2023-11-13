@@ -23,7 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MovieViewComponent } from './movie-view/movie-view.component';
 import { DirectorViewComponent } from './director-view/director-view.component';
 import { GenreViewComponent } from './genre-view/genre-view.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { AccountModalComponent } from './account-modal/account-modal.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FavoritesModalComponent } from './favorites-modal/favorites-modal.component';
 import { GoogleMapsModule } from '@angular/google-maps';
@@ -32,7 +32,6 @@ import { MapComponent } from './map/map.component';
 const appRoutes: Routes = [
   { path: 'welcome', component: LandingPageComponent },
   { path: 'movies', component: MovieCardComponent },
-  { path: `director`, component: DirectorViewComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 @NgModule({
@@ -45,7 +44,7 @@ const appRoutes: Routes = [
     MovieViewComponent,
     DirectorViewComponent,
     GenreViewComponent,
-    ProfilePageComponent,
+    AccountModalComponent,
     NavbarComponent,
     FavoritesModalComponent,
     MapComponent

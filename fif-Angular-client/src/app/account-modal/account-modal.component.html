@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>User Information</h1>
+<div mat-dialog-content>
+    <ng-container *ngIf="!isEditing">
+        <p (dblclick)="editField('username')">Username: {{ user.username }}</p>
+        <p (dblclick)="editField('email')">Email: {{ user.email }}</p>
+        <p (dblclick)="editField('password')">Password: ********</p>
+    </ng-container>
+    <ng-container *ngIf="isEditing">
+    <div *ngIf="editingField === 'username'">
+        <label>Username:</label>
+        <input class={{errorClass}} [(ngModel)]="user.username" placeholder="Username" />    
+        <p style="font-size: x-small; color: red;" *ngIf="errorMessage !== ''">{{errorMessage}}</p>  
+    </div>
+    <div *ngIf="editingField === 'email'">
+        <label>Email:</label>
+        <input class={{errorClass}} type="email" [(ngModel)]="user.email" placeholder="Email" />    
+        <p style="font-size: x-small; color: red;" *ngIf="errorMessage !== ''">{{errorMessage}}</p>   
+    </div>
+    <div *ngIf="editingField === 'password'" >
+        <label>Password:</label>
+            <input class={{errorClass}} [(ngModel)]="user.password" placeholder="Password" /> 
+        <p style="font-size: x-small; color: red;" *ngIf="errorMessage !== ''">{{errorMessage}}</p>   
+    </div>
+        <button mat-button (click)="saveChanges()"><mat-icon>check_circle</mat-icon></button>
+        <button mat-button (click)="cancelEdit()"><mat-icon>clear</mat-icon></button>
+    </ng-container>
+</div>

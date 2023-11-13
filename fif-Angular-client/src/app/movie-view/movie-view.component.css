@@ -1,0 +1,44 @@
+img {
+    width: 100%; /* Ensures image takes full width of the card */
+    height: auto; /* Maintains aspect ratio */
+}
+.favorite{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+button{
+    transition: transform 0.2s ease;
+}
+button:hover{
+    transform: scale(1.10)
+}
+button:focus-visible{
+    outline: none;
+}
+button:active, mat-stroked-button{
+    background: inherit;
+    background-color: inherit;
+}
+.card{
+    width: 50vw;
+}
+mat-card-subtitle{
+    padding: 10px;
+}
+.subtitle{
+    display: flex;
+    justify-content: flex-start;
+}
+.mobile-card{
+    width: 100%;
+}
+mat-card-header{
+    display: block;
+}
+mat-card-title{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}

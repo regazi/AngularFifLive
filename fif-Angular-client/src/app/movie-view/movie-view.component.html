@@ -1,0 +1,18 @@
+<div style="display: flex; overflow: scroll; padding-top: 10px; background-color: transparent;">
+    <mat-card class={{style}}>
+        <mat-card-header>
+            <mat-card-title>{{movie.title}}</mat-card-title>
+            <div class="subtitle">
+                <mat-card-subtitle>Director: <a href="javascript:void(0)" color="primary" (click)="openDirectorViewDialog(movie.director)">{{movie.director.name}}</a></mat-card-subtitle>
+                <mat-card-subtitle>Genre: <a href="javascript:void(0)" (click)="openGenreViewDialog(movie.genre)">{{movie.genre.name}}</a></mat-card-subtitle>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <img src={{movie.imageURL}} alt= {{movie.title}} />
+        </mat-card-content>
+        <mat-card-footer>
+            <app-map [markers]="movie.filmingLocations" [center]="movie.filmingLocations[0]"></app-map>
+        </mat-card-footer>
+        
+    </mat-card>
+</div>

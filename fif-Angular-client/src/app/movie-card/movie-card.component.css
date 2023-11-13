@@ -1,0 +1,57 @@
+
+.outerContainer{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.container{
+    padding: 2em;
+    padding-left: 1.5em;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    margin-top: 18rem;
+    border-radius: .5%;
+    box-shadow: 0 0 35px rgba(81, 83, 173, 0.8);
+}
+
+  
+.mobileContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: scroll;
+    max-width: 50%;
+  }
+mat-card {
+    flex: 0 0 auto; /* Prevents cards from stretching */
+    width: 100%;
+    margin-left:.5em;
+    min-width: 200px; /* Width of each card */
+    transition: transform 0.5s ease;
+}
+
+img {
+    width: 100%; /* Ensures image takes full width of the card */
+    height: 300px; 
+    object-fit: cover; 
+}
+mat-card-header {
+display: flex;
+justify-content: center;
+ font-weight: 500;
+}
+mat-card:hover {
+    transform: scale(1.10);
+    z-index: 3;
+    box-shadow: 0 0 35px rgba(103, 105, 185, 0.8);
+}
+.container:hover mat-card{
+    overflow-y: visible;
+}
+mat-card:active{
+    background: none;
+}
+
